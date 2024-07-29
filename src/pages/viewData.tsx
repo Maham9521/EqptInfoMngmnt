@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Equipment, addEquipment, getAllEquipment, getDocuments, sampleEquipmentData } from '../pouchdbService';
-import { Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import { Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 
 const ViewData: React.FC = () => {
-    // const insertSampleData = async () => {
-    //     for (const equipment of sampleEquipmentData) {
-    //         await addEquipment(equipment);
-    //     }
-    //     console.log('Sample data inserted successfully.');
-    // };
+    const insertSampleData = async () => {
+        for (const equipment of sampleEquipmentData) {
+            await addEquipment(equipment);
+        }
+        console.log('Sample data inserted successfully.');
+    };
 
-    // // Run the insertion
-    // insertSampleData();
+    // Run the insertion
+    insertSampleData();
 
     const [equipmentData, setEquipmentData] = useState<Equipment[]>([]);
 
@@ -31,37 +31,299 @@ const ViewData: React.FC = () => {
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell>Serial No</TableCell>
-                            <TableCell>Eqpt Cat</TableCell>
-                            <TableCell>BA No</TableCell>
-                            <TableCell>Make & Type</TableCell>
-                            <TableCell>Unit</TableCell>
-                            <TableCell>Fmn</TableCell>
-                            <TableCell>Maint Wksp</TableCell>
-                            <TableCell>Tyres Issue Date</TableCell>
-                            <TableCell>Tyres Due Date</TableCell>
-                            <TableCell>Oil Filter Issue Date</TableCell>
-                            <TableCell>Oil Filter Due Date</TableCell>
-                            <TableCell>Fuel Filter Issue Date</TableCell>
-                            <TableCell>Fuel Filter Due Date</TableCell>
+                            <TableCell
+                                rowSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px",
+                                    width: "5%"
+                                }}
+                            >
+                                Ser No.
+                            </TableCell>
+
+                            <TableCell
+                                rowSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px",
+                                    width: "8%"
+                                }}
+                            >
+                                Eqpt Cat
+                            </TableCell>
+
+                            <TableCell
+                                rowSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px",
+                                    width: "8%"
+                                }}
+                            >
+                                BA No
+                            </TableCell>
+
+                            <TableCell
+                                rowSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px",
+                                    width: "12%"
+                                }}
+                            >
+                                Make & Type
+                            </TableCell>
+                            <TableCell
+                                rowSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px",
+                                    width: "8%"
+                                }}
+                            >
+                                Unit
+                            </TableCell>
+                            <TableCell
+                                rowSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px",
+                                    width: "8%"
+                                }}
+                            >
+                                Fmn
+                            </TableCell>
+                            <TableCell
+                                rowSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px",
+                                    width: "12%"
+                                }}
+                            >
+                                Maint Wksp
+                            </TableCell>
+                            <TableCell
+                                colSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px"
+                                }}
+                            >
+                                Tyres
+                            </TableCell>
+                            <TableCell
+                                colSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px"
+                                }}
+                            >
+                                Oil Filter
+                            </TableCell>
+                            <TableCell
+                                colSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px"
+                                }}
+                            >
+                                Fuel Filter
+                            </TableCell>
+                            <TableCell
+                                colSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px"
+                                }}
+                            >
+                                Battery
+                            </TableCell>
+                            <TableCell
+                                rowSpan={2}
+                                align="center"
+                                sx={{
+                                    borderBottom: "3px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "18px",
+                                    fontFamily: "Poppins",
+                                    padding: "2px",
+                                    width: "13%"
+                                }}
+                            >
+                                Additional Notes
+                            </TableCell>
+
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {equipmentData.map((item) => (
+                        <TableRow>
+                            <TableCell align="center" sx={{ borderBottom: "1px solid #940301" }}></TableCell>
+                            <TableCell align="center" sx={{ borderBottom: "1px solid #940301" }}></TableCell>
+                            <TableCell align="center" sx={{ borderBottom: "1px solid #940301" }}></TableCell>
+                            <TableCell align="center" sx={{ borderBottom: "1px solid #940301" }}></TableCell>
+                            <TableCell align="center" sx={{ borderBottom: "1px solid #940301" }}></TableCell>
+                            <TableCell align="center" sx={{ borderBottom: "1px solid #940301" }}></TableCell>
+                            <TableCell align="center" sx={{ borderBottom: "1px solid #940301" }}></TableCell>
+
+                            <TableCell align="center"
+                                sx={{
+                                    borderBottom: "1px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "16px",
+                                    fontFamily: "Poppins",
+                                    padding: "12px 2px",
+                                    width: "6%%"
+                                }}>Instl Date</TableCell>
+                            <TableCell align="center"
+                                sx={{
+                                    borderBottom: "1px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "16px",
+                                    fontFamily: "Poppins",
+                                    padding: "12px 2px",
+                                    width: "6%%"
+                                }}>Due Date</TableCell>
+                            <TableCell align="center"
+                                sx={{
+                                    borderBottom: "1px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "16px",
+                                    fontFamily: "Poppins",
+                                    padding: "12px 2px",
+                                    width: "6%%"
+                                }}>Instl Date</TableCell>
+                            <TableCell align="center"
+                                sx={{
+                                    borderBottom: "1px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "16px",
+                                    fontFamily: "Poppins",
+                                    padding: "12px 2px",
+                                    width: "6%%"
+                                }}>Due Date</TableCell>
+                            <TableCell align="center"
+                                sx={{
+                                    borderBottom: "1px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "16px",
+                                    fontFamily: "Poppins",
+                                    padding: "12px 2px",
+                                    width: "6%%"
+                                }}>Instl Date</TableCell>
+                            <TableCell align="center"
+                                sx={{
+                                    borderBottom: "1px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "16px",
+                                    fontFamily: "Poppins",
+                                    padding: "12px 2px",
+                                    width: "6%%"
+                                }}>Due Date</TableCell>
+                            <TableCell align="center"
+                                sx={{
+                                    borderBottom: "1px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "16px",
+                                    fontFamily: "Poppins",
+                                    padding: "12px 2px",
+                                    width: "6%%"
+                                }}>Instl Date</TableCell>
+                            <TableCell align="center"
+                                sx={{
+                                    borderBottom: "1px solid #940301",
+                                    color: "#000053",
+                                    fontWeight: "600",
+                                    fontSize: "16px",
+                                    fontFamily: "Poppins",
+                                    padding: "12px 2px",
+                                    width: "6%%"
+                                }}>Due Date</TableCell>
+                            <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "600", fontSize: "18px", fontFamily: "Poppins" }}></TableCell>
+
+                        </TableRow>
+                        {equipmentData.map((item, index) => (
                             <TableRow key={item._id}>
-                                <TableCell>{item.serialNo}</TableCell>
-                                <TableCell>{item.eqptCat}</TableCell>
-                                <TableCell>{item.baNo}</TableCell>
-                                <TableCell>{item.makeAndType}</TableCell>
-                                <TableCell>{item.unit}</TableCell>
-                                <TableCell>{item.fmn}</TableCell>
-                                <TableCell>{item.maintWksp}</TableCell>
-                                <TableCell>{item.tyresIssueDate}</TableCell>
-                                <TableCell>{item.tyresDueDate}</TableCell>
-                                <TableCell>{item.oilFilterIssueDate}</TableCell>
-                                <TableCell>{item.oilFilterDueDate}</TableCell>
-                                <TableCell>{item.fuelFilterIssueDate}</TableCell>
-                                <TableCell>{item.fuelFilterDueDate}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{index + 1}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.eqptCat}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.baNo}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.makeAndType}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.unit}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.fmn}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.maintWksp}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.tyresInstlDate}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.tyresDueDate}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.oilFilterInstlDate}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.oilFilterDueDate}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.fuelFilterInstlDate}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.fuelFilterDueDate}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.batteryInstlDate}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.batteryDueDate}</TableCell>
+                                <TableCell align="center" sx={{ borderBottom: "1px solid #940301", color: "#000053", fontWeight: "500", fontSize: "14px", fontFamily: "Poppins" }}>{item.additionalNotes}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

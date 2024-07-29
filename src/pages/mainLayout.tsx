@@ -12,7 +12,7 @@ const Layout: React.FC = () => {
     const navigate = useNavigate();
 
     const menuItems = [
-        { text: 'Dashboard', image: Assets.HOME, link: "/dashboard" },
+        { text: 'Dashboard', image: Assets.HOME, link: "/home" },
         { text: 'Preview Data', image: Assets.VIEW, link: "/preview_data" },
         { text: 'Add Data', image: Assets.ADD_DATA, link: "/add_data" },
         { text: 'Information', image: Assets.INFO, link: "/info" },

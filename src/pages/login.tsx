@@ -12,13 +12,13 @@ const Login: React.FC = () => {
     const [error, setError] = useState('');
 
     const handleButtonClick = async () => {
-        console.log("these are the creds", username, password);
+        // console.log("these are the creds", username, password);
         try {
             const userDoc = await findUserByUsername(username);
             console.log(userDoc);
             if (userDoc && userDoc.password === password) {
                 localStorage.setItem('signedIn', 'true');
-                navigate('/dasboard'); // Navigate to the /data route
+                navigate('/home');
             } else {
                 setError('Invalid username or password');
             }

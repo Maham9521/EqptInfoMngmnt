@@ -14,20 +14,22 @@ interface User {
 }
 
 export interface Equipment {
-  _id: string; // Unique identifier for each document
-  serialNo: string;
+  _id: string;
   eqptCat: string;
   baNo: string;
   makeAndType: string;
   unit: string;
   fmn: string;
   maintWksp: string;
-  tyresIssueDate: string;
+  tyresInstlDate: string;
   tyresDueDate: string;
-  oilFilterIssueDate: string;
+  oilFilterInstlDate: string;
   oilFilterDueDate: string;
-  fuelFilterIssueDate: string;
+  fuelFilterInstlDate: string;
   fuelFilterDueDate: string;
+  batteryInstlDate: string,
+  batteryDueDate: string,
+  additionalNotes:string,
 }
 
 
@@ -252,72 +254,78 @@ export const findByMaintWksp = async (maintWksp: string) => {
 export const sampleEquipmentData = [
   {
     _id: 'eqpt001',
-    serialNo: 'SN123456',
     eqptCat: 'Excavator',
     baNo: 'BA001',
     makeAndType: 'Caterpillar 320',
     unit: 'Unit 1',
     fmn: 'FMN123',
     maintWksp: 'Workshop A',
-    tyresIssueDate: '2024-01-01',
+    tyresInstlDate: '2024-01-01',
     tyresDueDate: '2025-01-01',
-    oilFilterIssueDate: '2024-01-01',
+    oilFilterInstlDate: '2024-01-01',
     oilFilterDueDate: '2025-01-01',
-    fuelFilterIssueDate: '2024-01-01',
-    fuelFilterDueDate: '2025-01-01'
+    fuelFilterInstlDate: '2024-01-01',
+    fuelFilterDueDate: '2025-01-01',
+     batteryInstlDate: '2024-07-05',
+    batteryDueDate: '2025-01-04',
+    additionalNotes:'This vehicle is brand new and needs to be maintained and observed closely',
   },
   {
     _id: 'eqpt002',
-    serialNo: 'SN789012',
     eqptCat: 'Bulldozer',
     baNo: 'BA002',
     makeAndType: 'Komatsu D155',
     unit: 'Unit 2',
     fmn: 'FMN456',
     maintWksp: 'Workshop B',
-    tyresIssueDate: '2024-02-01',
+    tyresInstlDate: '2024-02-01',
     tyresDueDate: '2025-02-01',
-    oilFilterIssueDate: '2024-02-01',
+    oilFilterInstlDate: '2024-02-01',
     oilFilterDueDate: '2025-02-01',
-    fuelFilterIssueDate: '2024-02-01',
-    fuelFilterDueDate: '2025-02-01'
+    fuelFilterInstlDate: '2024-02-01',
+    fuelFilterDueDate: '2025-02-01',
+     batteryInstlDate: '2024-07-05',
+    batteryDueDate: '2025-01-04',
+    additionalNotes:'',
   },
   {
     _id: 'eqpt003',
-    serialNo: 'SN345678',
     eqptCat: 'Loader',
     baNo: 'BA003',
     makeAndType: 'Volvo L220',
     unit: 'Unit 3',
     fmn: 'FMN789',
     maintWksp: 'Workshop C',
-    tyresIssueDate: '2024-03-01',
+    tyresInstlDate: '2024-03-01',
     tyresDueDate: '2025-03-01',
-    oilFilterIssueDate: '2024-03-01',
+    oilFilterInstlDate: '2024-03-01',
     oilFilterDueDate: '2025-03-01',
-    fuelFilterIssueDate: '2024-03-01',
-    fuelFilterDueDate: '2025-03-01'
+    fuelFilterInstlDate: '2024-03-01',
+    fuelFilterDueDate: '2025-03-01',
+    batteryInstlDate: '2024-07-05',
+    batteryDueDate: '2025-01-04',
+    additionalNotes:'',
   }
 ];
 
 
-// const user1 = {
-//   username: '41_EME',
-//   password: '0t0?jUhV/'
-// };
+const user1 = {
+  username: '41_EME',
+  password: '0t0?jUhV/'
+};
 
-// const user2 = {
-//   username: 'muhammad_ahmed',
-//   password: '5a78@#sd!',
-// };
+const user2 = {
+  username: 'muhammad_ahmed',
+  password: '5a78@#sd!',
+};
 
-// const user3 = {
-//   username: 'fourty1_EME',
-//   password: 'm@34hjd!l#'
-// };
+const user3 = {
+  username: 'fourty1_EME',
+  password: 'm@34hjd!l#'
+};
 
-// (async () => {
-//   await addUser(user1);
-//   await addUser(user2);
-//   await addUser(user3);
-// })();
+(async () => {
+  await addUser(user1);
+  await addUser(user2);
+  await addUser(user3);
+})();

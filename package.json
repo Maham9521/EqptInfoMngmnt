@@ -1,12 +1,16 @@
 {
-  "name": "equipment-info-management-system",
+  "name": "Equipment-Info-Management-System",
   "version": "0.1.0",
   "private": true,
+  "author": {"name": "Muhammad Ahmed"},
   "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.4",
-    "@mui/material": "^5.16.4",
+    "@mui/lab": "^5.0.0-alpha.173",
+    "@mui/material": "^5.16.5",
+    "@mui/system": "^5.16.5",
+    "@mui/x-date-pickers": "^7.11.1",
     "@reduxjs/toolkit": "^2.2.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -15,6 +19,8 @@
     "@types/node": "^16.18.102",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "dayjs": "^1.11.12",
+    "formik": "^2.4.6",
     "pouchdb": "^9.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -24,7 +30,8 @@
     "redux": "^5.0.1",
     "store": "^2.0.12",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,13 +39,16 @@
     "electron": "electron .",
     "dist": "electron-builder"
   },
-  "build": {
+"build": {
     "appId": "com.yourapp.id",
+    "icon": "build/EME-logo.png",
     "mac": {
-      "category": "your.app.category.type"
+      "category": "your.app.category.type",
+      "icon": "build/logo.icns"
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "build/logo.ico"
     }
   },
   "eslintConfig": {
